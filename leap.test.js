@@ -15,3 +15,8 @@ test("a normal leap year is skipped every 100 years.", function () {
     store.dispatch(changeYear(1900));
     expect(store.getState().isLeap).toBe(false);
 });
+
+test("a normal leap year is brought back every 400 years.", function (){
+    store.dispatch(changeYear(2000));
+    expect(store.getState().isLeap).toBe(true);
+});
